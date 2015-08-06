@@ -3,6 +3,9 @@ class User < ActiveRecord::Base
   has_many :tribe_users
   has_many :tribes, through: :tribe_users
 
+  has_many :user_skills
+  has_many :skills, through: :user_skills
+
   def self.find_or_create_from_oauth(oauth)
     user = User.find_or_create_by(provider: oauth.provider, uid: oauth.uid)
 
