@@ -1,8 +1,13 @@
-<body>
+<div class="index_body">
+
+
+<div class="container-fluid in-the-middle">
+
+
 <nav class="top_bar_x" role="navigation">
-  <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+  <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">work on your own terms with people you like</a>
     <ul class="right hide-on-med-and-down">
-      <li><a href="#">Login</a></li>
+      <li><%= link_to "Login", login_path %></li>
     </ul>
 
     <ul id="nav-mobile" class="side-nav">
@@ -16,10 +21,15 @@
     <br><br>
     <h1 class="header center green-text">Tribe2Hire</h1>
     <div class="row center">
-      <h5 class="header col s12 light">Band together, make money, live free</h5>
+      <h5 class="header col s12 light">Work => Liberated </h5>
+      <h6 class="header col s12 light">Band together, make money, live free</h6>
     </div>
     <div class="row center">
-      <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light green">get started</a>
+      <%= link_to "Join the movement", login_path, id: "download-button", class: "btn-large waves-effect waves-light green" %>
+    </div>
+    <br><br>
+    <div class="row center">
+      <%= link_to "hire a tribe", tribes_path, id: "download-button", class: "btn-large waves-effect waves-light green" %>
     </div>
     <br><br>
 
@@ -110,4 +120,6 @@
 <script src="../../bin/materialize.js"></script>
 <script src="js/init.js"></script>
 
-</body>
+</div>
+</div>
+

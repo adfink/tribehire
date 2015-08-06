@@ -1,11 +1,36 @@
-//  body {
-//    background: url('horses.jpeg') no-repeat center center;
-//    min-height: 100%;
-//    background-size: cover;
-//
-//    }
+  .index_body {
+    background: url('join_the_movement.png') no-repeat center center;
+    min-height: 100%;
+    background-size: cover;
+
+    }
+
+
+  .container-fluid {
+    max-width: 80%;
+    background-color: transparentize(white, .3);
+  }
+
+  .in-the-middle {
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
 
 .top_bar_x {
   background-color: green !important;
 }
+
+.s4 {
+  background-color: green !important;
+}
+
+//.profile_image {
+//  height: 10%;
+//  width: 10%;
+//}
+
+
 
