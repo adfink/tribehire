@@ -1,5 +1,19 @@
 <body>
 
+
+
+
+<%= image_tag @tribe.avatar.url %>
+<%= image_tag @tribe.avatar.url(:medium) %>
+<%= image_tag @tribe.avatar.url(:thumb) %>
+
+<%= image_tag @tribe.avatar.url(:square) %>
+
+
+
+
+
+
 <div class="intro green lighten-1 z-depth-1">
   <h1 class="grey-text text-lighten-5"><%= @tribe.name %></h1>
   <h5 clas="grey lighten-4 grey-text text-darken-1">we write code</h5>

@@ -1,0 +1,17 @@
+
+
+
+<%= form_for(@friend, multipart: true) do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'make a tribe' %>
+    <%= link_to 'Nevermind', tribes_path, class: 'button' %>
+  </div>
+<% end %>
