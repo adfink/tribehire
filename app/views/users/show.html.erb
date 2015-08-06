@@ -17,6 +17,11 @@
         <a href="#"><%= current_user.name %> </a>
       </div>
     </div>
+    <div class="collection">
+      <% current_user.tribes each do |tribe| %>
+        <%= link_to tribe.name, tribe_path, class: "collection-item" %>
+      <% end %>
+    </div>
 
 
     <div class="col s12 m4 l2 center-align">
