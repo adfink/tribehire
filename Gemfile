@@ -19,7 +19,6 @@ gem "figaro"
 gem 'pry-rails'
 gem 'better_errors'
 
-
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'materialize-sass'
