@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   resources :tribes
   resources :users
+  resources :skills
+
 
 
 end
