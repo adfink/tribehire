@@ -215,7 +215,7 @@ DEPENDENCIES
   materialize-sass
   octokit (~> 4.0)
   omniauth-github
-  paperclip (~> 4.3)
+  paperclip (~> 4.2)
   pg
   pry-rails
   rails (= 4.2.1)

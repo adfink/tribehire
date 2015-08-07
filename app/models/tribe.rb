@@ -8,6 +8,11 @@ class Tribe < ActiveRecord::Base
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   has_many :tribe_users
   has_many :users, through: :tribe_users
+
+  # has_attached_file :image, default_url: 'missing_image.jpg'
+  # validates_attachment :image, content_type: { content_type: ['image/jpg', 'image/jpeg', 'image/png'] },
+  #   size: { in: 0..4.megabytes }
+
   # has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   # validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 

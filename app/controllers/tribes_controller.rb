@@ -17,6 +17,7 @@ class TribesController < ApplicationController
     @tribe = Tribe.new(tribe_params)
 
     if @tribe.save
+      # binding.pry
       redirect_to @tribe, notice: 'tribe was successfully created.'
     else
       render action: 'new'

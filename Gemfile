@@ -18,7 +18,7 @@ gem "octokit", "~> 4.0"
 gem "figaro"
 gem 'pry-rails'
 gem 'better_errors'
-gem "paperclip", "~> 4.3"
+gem "paperclip", "~> 4.2"
 gem 'aws-sdk', '~> 1.6'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
