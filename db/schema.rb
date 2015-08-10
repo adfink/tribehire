@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150806194157) do
+ActiveRecord::Schema.define(version: 20150807195126) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "roles", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "skills", force: :cascade do |t|
     t.string   "name"
@@ -46,6 +52,18 @@ ActiveRecord::Schema.define(version: 20150806194157) do
     t.datetime "avatar_updated_at"
   end
 
+  create_table "user_roles", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "role_id"
+    t.integer  "tribe_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "user_roles", ["role_id"], name: "index_user_roles_on_role_id", using: :btree
+  add_index "user_roles", ["tribe_id"], name: "index_user_roles_on_tribe_id", using: :btree
+  add_index "user_roles", ["user_id"], name: "index_user_roles_on_user_id", using: :btree
+
   create_table "user_skills", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "skill_id"
@@ -73,6 +91,9 @@ ActiveRecord::Schema.define(version: 20150806194157) do
 
   add_foreign_key "tribe_users", "tribes"
   add_foreign_key "tribe_users", "users"
+  add_foreign_key "user_roles", "roles"
+  add_foreign_key "user_roles", "tribes"
+  add_foreign_key "user_roles", "users"
   add_foreign_key "user_skills", "skills"
   add_foreign_key "user_skills", "users"
 end
