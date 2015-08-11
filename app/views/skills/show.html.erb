@@ -1,1 +1,24 @@
-<%= @skill.name %>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="card-panel hoverable center-align"><%= @skill.name %></div>
+
+      <% @jobs.each do |job| %>
+        <div class="col s12 m12 l12">
+          <div class="card">
+            <div class="card-content">
+              <%= job.name %>
+            </div>
+            <div class="card-content">
+              <%= job.description %>
+            </div>
+            <div class="card-action">
+              <a href="<%= job.link %>">click here to see the job</a>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

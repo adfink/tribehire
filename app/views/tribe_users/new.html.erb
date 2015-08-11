@@ -1,0 +1,22 @@
+
+<div class="container">
+  <div class="row">
+    <div class="card-panel hoverable center-align">Apply to join the tribe called <%= @tribe.name %></div>
+
+      <%= form_for(@tribe_user) do |f| %>
+      <div class="field">
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+        <%= hidden_field_tag 'tribe_tag', @tribe.id %>
+      </div>
+      <div class="field">
+        <%= f.label :description, "Why do you want to join our tribe and what do you bring to the table" %>
+        <%= f.text_area :description %>
+      </div>
+      <div>
+        <%= f.submit 'apply to our tribe' %>
+      <% end %>
+
+  </div>
+
+</div>

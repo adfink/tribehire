@@ -11,10 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150806164705) do
+ActiveRecord::Schema.define(version: 20150811193758) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "jobs", force: :cascade do |t|
+    t.string   "name"
+    t.text     "link"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "skills", force: :cascade do |t|
     t.string   "name"
@@ -25,8 +39,11 @@ ActiveRecord::Schema.define(version: 20150806164705) do
   create_table "tribe_users", force: :cascade do |t|
     t.integer  "tribe_id"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "name"
+    t.text     "description"
+    t.string   "email"
   end
 
   add_index "tribe_users", ["tribe_id"], name: "index_tribe_users_on_tribe_id", using: :btree
@@ -38,9 +55,25 @@ ActiveRecord::Schema.define(version: 20150806164705) do
     t.string   "phone"
     t.string   "email"
     t.string   "address"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.string   "avatar_file_size"
+    t.datetime "avatar_updated_at"
+  end
+
+  create_table "user_roles", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "role_id"
+    t.integer  "tribe_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "user_roles", ["role_id"], name: "index_user_roles_on_role_id", using: :btree
+  add_index "user_roles", ["tribe_id"], name: "index_user_roles_on_tribe_id", using: :btree
+  add_index "user_roles", ["user_id"], name: "index_user_roles_on_user_id", using: :btree
 
   create_table "user_skills", force: :cascade do |t|
     t.integer  "user_id"
@@ -69,6 +102,9 @@ ActiveRecord::Schema.define(version: 20150806164705) do
 
   add_foreign_key "tribe_users", "tribes"
   add_foreign_key "tribe_users", "users"
+  add_foreign_key "user_roles", "roles"
+  add_foreign_key "user_roles", "tribes"
+  add_foreign_key "user_roles", "users"
   add_foreign_key "user_skills", "skills"
   add_foreign_key "user_skills", "users"
 end
