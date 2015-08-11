@@ -16,6 +16,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'omniauth-github'
 gem "octokit", "~> 4.0"
 gem "figaro"
+gem 'httparty'
 gem 'pry-rails'
 gem 'better_errors'
 gem "paperclip", "~> 4.2"
@@ -23,6 +24,9 @@ gem 'aws-sdk', '~> 1.6'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'materialize-sass'
+gem 'json'
+gem 'upwork-api'
+gem 'nokogiri'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
