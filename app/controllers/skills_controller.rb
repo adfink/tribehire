@@ -7,7 +7,7 @@ class SkillsController < ApplicationController
 
   def show
     @skill = Skill.find(params[:id])
-    page = Nokogiri::HTML(open("https://www.elance.com/r/jobs/q-rails%20/"))
+    page = Nokogiri::HTML(open("https://www.elance.com/r/jobs/q-#{@skill.name.split(" ").join}%20/"))
     # Event = Struct.new :name , :link , :date
     #
     # doc = Nokogiri::HTML DATA

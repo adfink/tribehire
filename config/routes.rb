@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :users
   resources :skills
   resources :elance
+  resources :tribe_users
 
   namespace :admin do
     resources :tribes

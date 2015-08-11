@@ -15,9 +15,9 @@ class TribesController < ApplicationController
 
   def create
     @tribe = Tribe.new(tribe_params)
-    @tribe.user_id = session[:user_id]
+    # @tribe.user_id = session[:user_id]
     if @tribe.save
-      UserRole.create(user_id: current_user.id, tribe_id: tribe.id, role_id: 1)
+      UserRole.create(user_id: current_user.id, tribe_id: @tribe.id, role_id: 2)
       # binding.pry
       redirect_to @tribe, notice: 'tribe was successfully created.'
     else
