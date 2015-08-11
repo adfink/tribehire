@@ -18,9 +18,12 @@ class SkillsController < ApplicationController
       name = job.at_css("a.title").text.strip
       description = job.at_css(".desc").text.strip
       # full_description = job.at_css(".desc .descFull .expanded").text.strip
-      binding.pry
-      Job.new(name , link , description)
+      new_job = Job.new(name:name, link:link, description:description)
+      # binding.pry
+      new_job.save
+      new_job
     end
+    @jobs = jobs
   end
 
 end

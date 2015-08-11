@@ -25,7 +25,7 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'materialize-sass'
 gem 'json'
-gem 'upwork-api'
+# gem 'upwork-api'
 gem 'nokogiri'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

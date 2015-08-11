@@ -1,6 +1,6 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :github, ENV['github_key'] , ENV['github_secret']
-  provider :upwork, ENV['github_key'] , ENV['github_secret']
+  # provider :upwork, ENV['github_key'] , ENV['github_secret']
 end
 
 # Rails.application.config.middleware.use OmniAuth::Builder do
