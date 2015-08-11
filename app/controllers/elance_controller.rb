@@ -2,7 +2,7 @@ class ElanceController < ApplicationController
 
   def index
     x = ElanceCommunicator.new
-    x.connect(params)
+    x.connect(current_user)
 
 
   end

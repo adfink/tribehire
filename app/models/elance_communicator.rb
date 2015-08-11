@@ -2,19 +2,26 @@ require 'json'
 class ElanceCommunicator
 
 
-  def connect(params)
-    response = HTTParty.get("httpqs://api.elance.com/api2/oauth/authorize",
+  def authenticate
+    HTTParty.get("httpqs://api.elance.com/api2/oauth/authorize",
       :query => { :client_id => "55c53100e4b0ce56b5a32f86",
-                  :redirect_uri => "http://localhost:3000/auth/elance/callback",
-                  :request_type => "code"
+        :redirect_uri => "http://localhost:3000/auth/elance/callback",
+        :request_type => "code"
       })
+  end
 
-binding.pry
+  def jobs(current_user)
+    HTTParty.get("httpqs://api.elance.com/api2/jobs/#{current_user.skills.first.name}")
+  end
 
+  def connect(params)
+    authenticate
+    response = jobs(params)
+
+# binding.pry
     json_response = Hash.from_xml(response).to_json
 
     access_token = json_response['data']['access_token']
-
   end
   # def connect(params)
   #   response = HTTParty.post("https://api.elance.com/api2/oauth/authorize?client_id=55c53100e4b0ce56b5a32f86&redirect_uri=http://localhost:3000/auth/elance/callback&scope=basicInfo&response_type=code")
