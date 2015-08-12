@@ -9,6 +9,12 @@ class SkillsController < ApplicationController
     @skill = Skill.new
   end
 
+  def create
+    # binding.pry
+    current_user.skills.create(name:params[:skill][:name])
+    redirect_to current_user
+  end
+
   def show
     @skill = Skill.find(params[:id])
     page = Nokogiri::HTML(open("https://www.elance.com/r/jobs/q-#{@skill.name.split(" ").join}%20/"))

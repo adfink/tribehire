@@ -1,19 +1,35 @@
 
 <div class="container">
   <div class="row">
-
+    <div class="card-panel hoverable teal white-text center-align">Tribe4Hire</div>
     <%= form_for(@tribe, multipart: true) do |f| %>
       <div class="field">
         <%= f.label :name %>
         <%= f.text_field :name %>
       </div>
       <div class="field">
-        <%= f.label :avatar %>
-        <%= f.file_field :avatar %>
+        <%= f.label :story, "What's the story?  How did this tribe come to be?" %>
+        <%= f.text_area :story %>
       </div>
+      <div class="field">
+        <%= f.label :email, "main contact email" %>
+        <%= f.text_field :email %>
+      </div>
+      <div class="field">
+        <%= f.label :phone, "main contact phone number" %>
+        <%= f.text_field :phone %>
+      </div>
+      <div class="field">
+        <%= f.label :address, "address if applicable" %>
+        <%= f.text_field :address %>
+      </div>
+      <div class="field">
+        <%= f.label :avatar, "image for tribe page" %><br><br>
+        <%= f.file_field :avatar, class:"waves-effect waves-light btn" %>
+      </div>
+      <br><br>
       <div class="actions">
         <%= f.submit 'make a tribe' %>
-        <%= link_to 'Nevermind', tribes_path, class: 'button' %>
       </div>
     <% end %>
 

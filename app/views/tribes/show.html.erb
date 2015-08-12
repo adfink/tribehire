@@ -45,26 +45,43 @@
     <div class="col s12 m4 l4">
       <h6>skill set</h6>
       <ul class="collapsible">
+        <% @skills.each do |skill| %>
         <li class="active">
-          <div class="collapsible-header"><i class="mdi-av-web"></i>CSS design</div>
-          <div class="collapsible-body"><p>we make it pretty</p></div>
+          <div class="collapsible-header"><i class="mdi-editor-format-align-justify"></i><%= skill.name %></div>
         </li>
-        <li>
-          <div class="collapsible-header"><i class="mdi-editor-format-align-justify"></i>Rails development</div>
-          <div class="collapsible-body"><p>we build websites on this super neat framework</p></div>
-        </li>
-        <li>
-          <div class="collapsible-header"><i class="mdi-av-play-shopping-bag"></i>Video Editing</div>
-          <div class="collapsible-body"><p>we can whip up a super compelling video too if you want</p></div>
-        </li>
-        <li>
-          <div class="collapsible-header"><i class="mdi-editor-insert-comment"></i>javascript</div>
-          <div class="collapsible-body"><p>we know that too</p></div>
-        </li>
+          <% end %>
       </ul>
     </div>
   </div>
 </div>
+
+<div class="row center-align teal lighten-2">
+  <h5><%= link_to "Join our tribe", new_tribe_user_path(tribe_id: @tribe.id), class: "center white-text z-depth-3 lighten-2"%></h5>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="card-panel hoverable center-align">Jobs that your tribe can apply to</div>
+
+    <% @alljobs.each do |job| %>
+      <div class="col s12 m12 l12">
+        <div class="card">
+          <div class="card-content">
+            <%= job.name %>
+          </div>
+          <div class="card-content">
+            <%= job.description %>
+          </div>
+          <div class="card-action">
+            <a href="<%= job.link %>">click here to see the job</a>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
 
 <div class="container portfolio">
   <h5>portfolio</h5>
@@ -114,9 +131,9 @@
     </div>
     <div class="col s12 m6 l6 contact-holder">
       <h6 class="mdi-action-home">Headquarters Address</h6>
-      <p>300 Logan St. #2 Denver, CO USA</p>
+      <p><%= @tribe.address %></p>
       <h6 class="mdi-hardware-phone-android">Phone Number</h6>
-      <p>262-262-2266</p>
+      <p><%= @tribe.phone %></p>
       <h6 class="mdi-action-open-in-browser">Website</h6>
       <p>another cool porfolio site</p>
     </div>

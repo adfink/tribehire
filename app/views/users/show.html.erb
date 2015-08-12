@@ -20,22 +20,23 @@
     <div class="row center-align teal lighten-2">
       <h5 class="center white-text z-depth-3 lighten-2">Skills</h5>
     </div>
-    <%= link_to "+", new_skill_path, class: "waves-effect waves-light btn" %>
     <div class="collection">
       <% current_user.skills.each do |skill| %>
         <%= link_to skill.name, skill_path(skill), class: "collection-item" %>
-      <% end %>
+    <% end %>
+      <%= link_to "+", new_skill_path, class: "waves-effect waves-light btn" %>
     </div>
 
     <div class="row center-align teal lighten-2">
       <h5 class="center white-text z-depth-3 lighten-2">Tribes</h5>
     </div>
-    <%= link_to "+", new_tribe_path, class: "waves-effect waves-light btn" %>
+
 
     <div class="collection">
       <% current_user.tribes.each do |tribe| %>
         <%= link_to tribe.name, tribe_path(tribe), class: "collection-item" %>
       <% end %>
+      <%= link_to "+", new_tribe_path, class: "waves-effect waves-light btn" %>
     </div>
 
 
