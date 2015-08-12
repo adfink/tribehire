@@ -3,8 +3,7 @@
 
 <div class="container">
 <div class="row">
-  <div class="card-panel hoverable center-align">Tribe2Hire</div>
-  <div class="card-panel hoverable center-align">This is the profile page of <%= current_user.name %></div>
+  <div class="card-panel hoverable teal white-text center-align">Tribe4Hire</div>
   <div class="col s12 m4 l3">
     <div class="card">
       <div class="card-image">
@@ -21,6 +20,7 @@
     <div class="row center-align teal lighten-2">
       <h5 class="center white-text z-depth-3 lighten-2">Skills</h5>
     </div>
+    <%= link_to "+", new_skill_path, class: "waves-effect waves-light btn" %>
     <div class="collection">
       <% current_user.skills.each do |skill| %>
         <%= link_to skill.name, skill_path(skill), class: "collection-item" %>
@@ -30,25 +30,22 @@
     <div class="row center-align teal lighten-2">
       <h5 class="center white-text z-depth-3 lighten-2">Tribes</h5>
     </div>
+    <%= link_to "+", new_tribe_path, class: "waves-effect waves-light btn" %>
+
     <div class="collection">
       <% current_user.tribes.each do |tribe| %>
         <%= link_to tribe.name, tribe_path(tribe), class: "collection-item" %>
       <% end %>
     </div>
 
-    <div class="row center-align teal lighten-2">
-      <h5><%= link_to "Form a new tribe", new_tribe_path, class: "center white-text z-depth-3 lighten-2"%></h5>
-    </div>
-
-    <div class="row center-align teal lighten-2">
-      <h5><%= link_to "connect to elance", elance_index_path, class: "center white-text z-depth-3 lighten-2"%></h5>
-    </div>
 
   </div>
 
+
+
   <div class="col s12 m4 l9">
 
-      <p>Open source projects</p>
+      <h5 class="center">Open source projects</h5>
       <table class="hoverable responsive-table centered">
         <thead>
         <tr>
@@ -75,176 +72,7 @@
 
 
 
-
-
-
-
-
-<div class="container">
-  <div class="row">
-    <div class="card-panel hoverable center-align">Tribe2Hire</div>
-    <div class="card-panel hoverable center-align">this is your personal dashboard</div>
-    <div class="col s4 z-depth-3 hoverable profile_image">
-          <div class="card">
-            <div class="card-image">
-              <%= image_tag "#{current_user.image_url}", class: "img-circle img-thumbnail home-image" %>
-            </div>
-            <div class="card-content">
-              <p>I'm a nice guy looking for some work.  I like to work in groups so don't hesitate to ask me to be part of your tribe </p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link to somwhere </a>
-            </div>
-          </div>
-    </div>
-    <div class="col s4 z-depth-3 hoverable">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Card Title</span>
-          <p>I am a very simple card. I am good at containing small bits of information.
-            I am convenient because I require little markup to use effectively.</p>
-        </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-          <a href="#">This is a link</a>
-        </div>
-      </div>
-
-    </div>
-    <div class="col s4 z-depth-3 hoverable">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Card Title</span>
-          <p>I am a very simple card. I am good at containing small bits of information.
-            I am convenient because I require little markup to use effectively.</p>
-        </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-          <a href="#">This is a link</a>
-        </div>
-      </div>
-
-    </div>
-    <div class="col s4 z-depth-3 hoverable">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Card Title</span>
-          <p>I am a very simple card. I am good at containing small bits of information.
-            I am convenient because I require little markup to use effectively.</p>
-        </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-          <a href="#">This is a link</a>
-        </div>
-      </div>
-
-    </div>
-    <div class="col s4 z-depth-3 hoverable">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Card Title</span>
-          <p>I am a very simple card. I am good at containing small bits of information.
-            I am convenient because I require little markup to use effectively.</p>
-        </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-          <a href="#">This is a link</a>
-        </div>
-      </div>
-
-    </div>
-    <div class="col s4 z-depth-3 hoverable">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Card Title</span>
-          <p>I am a very simple card. I am good at containing small bits of information.
-            I am convenient because I require little markup to use effectively.</p>
-        </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-          <a href="#">This is a link</a>
-        </div>
-      </div>
-
-    </div>
-    <div class="col s4 z-depth-3 hoverable">new tribe and job list links</div>
-    <div class="col s4 z-depth-3 hoverable">pretty picture</div>
-    <div class="col s4 z-depth-3 hoverable">edit portfolio</div>
-    <div class="col s4">10</div>
-    <div class="col s4">11</div>
-    <div class="col s4">12</div>
-  </div>
 </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col s12 center-align"><p>Tribe2Hire</p></div>
-    <div class="col s12 m4 l2 center-align">
-      <p>Tribes</p>
-      <ul id="dropdown2" class="dropdown-content">
-        <li><a href="#!">one<span class="badge">1</span></a></li>
-        <li><a href="#!">two<span class="new badge">1</span></a></li>
-        <li><a href="#!">three</a></li>
-      </ul>
-      <a class="btn dropdown-button" href="#!" data-activates="dropdown2">Tribes<i class="mdi-navigation-arrow-drop-down right"></i></a>
-    </div>
-    <div class="col s12 m4 l8 center-align">
-      <p>Open source projects</p>
-        <table class="hoverable responsive-table centered">
-          <thead>
-          <tr>
-            <th data-field="name">project name</th>
-            <th data-field="created_on">created on</th>
-            <th data-field="forks">number of forks</th>
-          </tr>
-          </thead>
 
-          <tbody>
-          <% @user.repos.each do |repo| %>
-          <tr>
-            <td><%=  link_to repo.name, repo.url %></td>
-            <td><%=  repo.created_at %></td>
-            <td><%=  repo.forks %></td>
-          </tr>
-          <% end %>
-          </tbody>
-        </table>
-    </div>
-    <div class="col s12 m4 l2 center-align">
-      <p>deadlines</p>
-      <table class="hoverable responsive-table centered">
-        <thead>
-        <tr>
-          <th data-field="id">Name</th>
-          <th data-field="name">Item Name</th>
-          <th data-field="price">Item Price</th>
-        </tr>
-        </thead>
 
-        <tbody>
-        <tr>
-          <td>Alvin</td>
-          <td>Eclair</td>
-          <td>$0.87</td>
-        </tr>
-        <tr>
-          <td>Alan</td>
-          <td>Jellybean</td>
-          <td>$3.76</td>
-        </tr>
-        <tr>
-          <td>Jonathan</td>
-          <td>Lollipop</td>
-          <td>$7.00</td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
-    <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
-    <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
-    <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
-  </div>
-</div>

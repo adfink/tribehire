@@ -8,8 +8,14 @@
 
   .container-fluid {
     max-width: 80%;
-    background-color: transparentize(white, .3);
+    background-color: transparentize(white, .1);
   }
+
+  .btn-large {
+    max-width: 40%;
+    min-width: 40%;
+  }
+
 
   .in-the-middle {
     width: auto;

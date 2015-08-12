@@ -5,6 +5,10 @@ class SkillsController < ApplicationController
     @skills = Skill.all
   end
 
+  def new
+    @skill = Skill.new
+  end
+
   def show
     @skill = Skill.find(params[:id])
     page = Nokogiri::HTML(open("https://www.elance.com/r/jobs/q-#{@skill.name.split(" ").join}%20/"))

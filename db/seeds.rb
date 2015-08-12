@@ -26,3 +26,4 @@ User.first.skills.create(name:'googling')
 User.first.skills.create(name:'juggling')
 
 Role.create(name: 'chief')
+Role.create(name: 'chief')
