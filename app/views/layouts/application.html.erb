@@ -8,6 +8,21 @@
 </head>
 <body>
 
+<nav>
+  <div class="green nav-wrapper">
+    <a href="#" class="green brand-logo center">work on your own terms with people you like</a>
+    <ul id="nav-mobile" class="green right hide-on-med-and-down">
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "All Tribes", tribes_path %></li>
+      <% if current_user %>
+    <li><%= link_to "Logout", logout_path %></li>
+    <% else %>
+        <li><%= link_to "Login", login_path %></li>
+        <% end %>
+    </ul>
+  </div>
+</nav>
+
 <%= yield %>
 
 </body>

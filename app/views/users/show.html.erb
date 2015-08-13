@@ -3,7 +3,6 @@
 
 <div class="container">
 <div class="row">
-  <div class="card-panel hoverable teal white-text center-align">Tribe4Hire</div>
   <div class="col s12 m4 l3">
     <div class="card">
       <div class="card-image">
@@ -17,17 +16,17 @@
       </div>
     </div>
 
-    <div class="row center-align teal lighten-2">
+    <div class="row center-align green lighten-2">
       <h5 class="center white-text z-depth-3 lighten-2">Skills</h5>
     </div>
     <div class="collection">
       <% current_user.skills.each do |skill| %>
         <%= link_to skill.name, skill_path(skill), class: "collection-item" %>
     <% end %>
-      <%= link_to "+", new_skill_path, class: "waves-effect waves-light btn" %>
+      <%= link_to "+", new_skill_path, class: "green waves-effect waves-light btn" %>
     </div>
 
-    <div class="row center-align teal lighten-2">
+    <div class="row center-align green lighten-2">
       <h5 class="center white-text z-depth-3 lighten-2">Tribes</h5>
     </div>
 
@@ -36,7 +35,7 @@
       <% current_user.tribes.each do |tribe| %>
         <%= link_to tribe.name, tribe_path(tribe), class: "collection-item" %>
       <% end %>
-      <%= link_to "+", new_tribe_path, class: "waves-effect waves-light btn" %>
+      <%= link_to "+", new_tribe_path, class: "green waves-effect waves-light btn" %>
     </div>
 
 
