@@ -1,11 +1,11 @@
 class Tribe < ActiveRecord::Base
-  attr_accessor :avatar_file_name
-  has_attached_file :avatar, styles: {
-  thumb: '100x100>',
-  square: '200x200#',
-  medium: '300x300>'
-  }
-  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+  # attr_accessor :avatar_file_name
+  # has_attached_file :avatar, styles: {
+  # thumb: '100x100>',
+  # square: '200x200#',
+  # medium: '300x300>'
+  # }
+  # validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   has_many :tribe_users
   has_many :users, through: :tribe_users
 

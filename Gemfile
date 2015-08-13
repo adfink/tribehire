@@ -19,7 +19,7 @@ gem "figaro"
 gem 'httparty'
 gem 'pry-rails'
 gem 'better_errors'
-gem "paperclip", "~> 4.2"
+# gem "paperclip", "~> 4.2"
 gem 'aws-sdk', '~> 1.6'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'

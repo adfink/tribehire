@@ -58,7 +58,7 @@
         <tbody>
         <% @user.repos.each do |repo| %>
           <tr>
-            <td><%=  link_to repo.name, repo.url %></td>
+            <td><%=  link_to repo.name, repo.html_url %></td>
             <td><%=  repo.created_at %></td>
             <td><%=  repo.forks %></td>
           </tr>
