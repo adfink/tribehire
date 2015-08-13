@@ -16,14 +16,26 @@ User.create(name: 'Jeff', email: 'demo+jeff@jumpstartlab.com')
 User.create(name: 'Jorge Tellez', email: 'demo+jorge@jumpstartlab.com')
 User.create(name: 'Josh Cheek', email: 'demo+josh@jumpstartlab.com')
 
-User.first.tribes.create(name:"Berners-Lee", story:"It all started in the dungeon, just a bunch of starry eyed kids trying to make it in this big world", phone:"3334445566", email:"drew@drew.com", address:"500 Main Street, Denver, CO 80205", image_path: "t2_waterfalls.png")
-User.first.tribes.create(name:"The Mil-town Mafia", story:"we code so hard. no give us our money", phone:"3334445566", email:"drew@drew.com", address:"Wisconsin Ave, Milwaukee, WI 54036", image_path: "t6_green_mountain.png")
-User.first.tribes.create(name:"The Mile High Hackers", story:"the second best tribe in all the land. we're all about getting things done and getting paid", phone:"3334445566", email:"drew@drew.com", address:"5000 Wall Street, Denver, CO 44445", image_path: "horses.jpeg")
+User.first.tribes.create(name:"Berners-Lee", story:"It all started in the dungeon, just a bunch of starry eyed kids trying to make it in this big world. We use code to build things and we believe in quality... we believe that there is a place in the world for excessive attention to detail.. hire us and we will prove it to you", phone:"3334445566", email:"drew@drew.com", address:"500 Main Street, Denver, CO 80205", image_path: "t2_water_falls.png")
+User.first.tribes.create(name:"The Mil-town Mafia", story:"we code so hard. now give us our money please.", phone:"3334445566", email:"drew@drew.com", address:"Wisconsin Ave, Milwaukee, WI 54036", image_path: "t6_green_mountain.png")
+User.first.tribes.create(name:"The Mile High Hackers", story:"the second best tribe in all the land. we're all about getting things done and getting paid, and then hittin the slopes to shred some sick gnar on the reg", phone:"3334445566", email:"drew@drew.com", address:"5000 Wall Street, Denver, CO 44445", image_path: "horses.jpeg")
+
+User.last.tribes.create(name:"The Computer Whisperers", story:"It all started in the dungeon, just a bunch of starry eyed kids trying to make it in this big world. We use code to build things and we believe in quality... we believe that there is a place in the world for excessive attention to detail.. hire us and we will prove it to you", phone:"3334445566", email:"drew@drew.com", address:"500 Main Street, Denver, CO 80205", image_path: "lush_forest.png")
+User.last.tribes.create(name:"Code Ninjas", story:"It all started in the dungeon, just a bunch of starry eyed kids trying to make it in this big world. We use code to build things and we believe in quality... we believe that there is a place in the world for excessive attention to detail.. hire us and we will prove it to you", phone:"3334445566", email:"drew@drew.com", address:"500 Main Street, Denver, CO 80205", image_path: "lonely.png")
+User.last.tribes.create(name:"The Chosen Ones", story:"we code so hard. now give us our money please.", phone:"3334445566", email:"drew@drew.com", address:"Wisconsin Ave, Milwaukee, WI 54036", image_path: "t5_squadron.png")
+User.last.tribes.create(name:"Dumbledoor's Army", story:"the second best tribe in all the land. we're all about getting things done and getting paid, and then hittin the slopes to shred some sick gnar on the reg", phone:"3334445566", email:"drew@drew.com", address:"5000 Wall Street, Denver, CO 44445", image_path: "t3_cows.png")
+
+
 
 User.first.skills.create(name:'ruby')
 User.first.skills.create(name:'ruby on rails')
 User.first.skills.create(name:'googling')
 User.first.skills.create(name:'juggling')
+
+User.last.skills.create(name:'javascript')
+User.last.skills.create(name:'C++')
+User.last.skills.create(name:'LISP')
+User.last.skills.create(name:'heroku')
 
 Role.create(name: 'chief')
 Role.create(name: 'chief')
