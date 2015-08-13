@@ -31,15 +31,22 @@
     </div>
     <div class="col s12 m4 l4">
       <h6>Members</h6>
+      <p>These are all the great people who are a part of this tribe</p>
+      <% @tribe.users.each do |user| %>
+
       <div class="card blue-grey darken-1">
+
         <div class="card-content white-text">
-          <img class="circle" src="/assets/drew_profile.jpg" width="64" height="64">
-          <p>These are all the great people who are a part of this tribe Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+          <%= image_tag "#{user.image_url}", class: "img-circle", width:"64", height:"64" %>
+        </div>
+        <div class="card-content">
+          <p>I really enjoy writing great code for people and getting paid for it </p>
         </div>
         <div class="card-action">
-          <a href="#">Link</a>
-          <a href='#'>Link</a>
+          <a href="#"><%= user.name %> </a>
         </div>
+      </div>
+        <% end %>
       </div>
     </div>
     <div class="col s12 m4 l4">
@@ -55,8 +62,8 @@
   </div>
 </div>
 
-<div class="row center-align teal lighten-2">
-  <h5><%= link_to "Join our tribe", new_tribe_user_path(tribe_id: @tribe.id), class: "center white-text z-depth-3 lighten-2"%></h5>
+<div class="row center-align green lighten-2">
+  <h5><%= link_to "Join our tribe", new_tribe_user_path(tribe_id: @tribe.id), class: " center white-text z-depth-3 lighten-2"%></h5>
 </div>
 
 <div class="container">
@@ -123,7 +130,7 @@
             </div>
           </div>
           <textarea class="materialize-textarea" placeholder="Your Message" required></textarea>
-          <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+          <button class="btn waves-effect waves-light green" type="submit" name="action">Submit
             <i class="mdi-content-send right"></i>
           </button>
         </form>
@@ -146,9 +153,7 @@
       <a class="grey-text text-lighten-4 right" href="#!">Link</a>
     </div>
   </div>
-  <div class="row center-align teal lighten-2">
-    <h5><%= link_to "Join our tribe", new_tribe_user_path(tribe_id: @tribe.id), class: "center white-text z-depth-3 lighten-2"%></h5>
-  </div>
+
 </footer>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='https://cdn.rawgit.com/Dogfalo/materialize/master/dist/js/materialize.min.js'></script>
