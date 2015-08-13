@@ -24,6 +24,10 @@
   </div>
 </nav>
 
+<% flash.each do |key, value| %>
+  <div class="center card-panel hoverable green white-text center-align-<%= key %>"><%= value %></div>
+<% end %>
+
 <%= yield %>
 
 </body>

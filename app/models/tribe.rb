@@ -9,6 +9,11 @@ class Tribe < ActiveRecord::Base
   has_many :tribe_users
   has_many :users, through: :tribe_users
 
+  validates_presence_of :name
+  validates_presence_of :story
+  validates_presence_of :email
+  validates_presence_of :phone
+
   # has_attached_file :image, default_url: 'missing_image.jpg'
   # validates_attachment :image, content_type: { content_type: ['image/jpg', 'image/jpeg', 'image/png'] },
   #   size: { in: 0..4.megabytes }

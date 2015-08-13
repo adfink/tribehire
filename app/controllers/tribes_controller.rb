@@ -44,7 +44,7 @@ class TribesController < ApplicationController
       # binding.pry
       redirect_to @tribe, notice: 'tribe was successfully created.'
     else
-      flash.now[:errors] = restaurant.errors.full_messages.join(", ")
+      flash.now[:errors] = @tribe.errors.full_messages.join(", ")
       render action: 'new'
     end
   end
