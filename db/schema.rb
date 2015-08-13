@@ -55,12 +55,8 @@ ActiveRecord::Schema.define(version: 20150813011354) do
     t.string   "phone"
     t.string   "email"
     t.string   "address"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.string   "avatar_file_size"
-    t.datetime "avatar_updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string   "image_path"
   end
 
@@ -93,12 +89,8 @@ ActiveRecord::Schema.define(version: 20150813011354) do
     t.string   "token"
     t.string   "uid"
     t.string   "image_url"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "tribe_users", "tribes"
